@@ -26,6 +26,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.pusnejc.workouttracker</groupId>
+            <artifactId>exercise-catalogue-cdi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,8 +48,8 @@
                             <inputSpec>${project.basedir}/src/main/resources/META-INF/openapi.yaml</inputSpec>
                             <generatorName>jaxrs-spec</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
-                            <apiPackage>io.github.pusnejc.workouttracker.catalogue.api</apiPackage>
-                            <modelPackage>io.github.pusnejc.workouttracker.catalogue.api.model</modelPackage>
+                            <apiPackage>io.github.pusnejc.workouttracker.catalogue.rest</apiPackage>
+                            <modelPackage>io.github.pusnejc.workouttracker.catalogue.rest.model</modelPackage>
                             <configOptions>
                                 <sourceFolder>src/main/java</sourceFolder>
                                 <interfaceOnly>true</interfaceOnly>
@@ -54,6 +59,7 @@
                                 <openApiNullable>false</openApiNullable>
                                 <generateJsonCreator>false</generateJsonCreator>
                                 <useSwaggerAnnotations>false</useSwaggerAnnotations>
+                                <containerDefaultToNull>true</containerDefaultToNull>   
                             </configOptions>
                         </configuration>
                     </execution>
