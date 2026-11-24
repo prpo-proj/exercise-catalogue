@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>exercise-catalogue-cdi</module>
         <module>exercise-catalogue-rest</module>
     </modules>
 
