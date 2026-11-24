@@ -37,7 +37,7 @@ class InMemoryExerciseService implements ExerciseService {
     @Override
     public ExercisePage getExercises(String nameFilter, int limit, int offset) {
         var filteredExercises = exercisesById.values().stream()
-            .filter(exercise -> nameFilter == null || exercise.name().toLowerCase().contains(nameFilter.toLowerCase()))
+            .filter(exercise -> nameFilter == null || exercise.name().toLowerCase(java.util.Locale.ROOT).contains(nameFilter.toLowerCase(java.util.Locale.ROOT)))
             .sorted(Comparator.comparing(Exercise::name, String.CASE_INSENSITIVE_ORDER)
                     .thenComparing(exercise -> exercise.id().toString()))
             .toList();
