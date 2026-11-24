@@ -12,7 +12,21 @@ The Exercise Catalogue service provides the shared list of exercises. When loggi
 
 ## Build, run, and test
 
-The service is in the design stage. Build, run, and test instructions will be added when the first runnable version is available.
+Requires Java 25. Maven is provided through the wrapper.
+
+Build:
+
+```powershell
+.\mvnw.cmd clean verify
+```
+
+Run in development mode (the API is served at `http://localhost:8080/v1`):
+
+```powershell
+.\mvnw.cmd -pl exercise-catalogue-rest -am compile io.quarkus.platform:quarkus-maven-plugin:3.40.1.2:dev
+```
+
+Automated tests will be added later.
 
 ## Related links
 
